@@ -1,10 +1,12 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <title>Химия өнеркәсібі</title>
     <style>
         body {
@@ -74,17 +76,20 @@
         }
         .nav-pills .nav-link {
             text-align: left;
-            color: #ffffff !important;
+            color: #ffffff !important;   /* белый текст всегда */
             font-weight: 600;
         }
+
         .nav-pills .nav-link:hover {
-            background-color: #0b5ed7;
+            background-color: #0b5ed7;   /* подсветка при наведении */
             color: #ffffff !important;
         }
+
         .nav-pills .nav-link.active {
             background-color: #0d6efd;
             color: #ffffff !important;
         }
+
         .nav-pills {
             background-color: #1e2a38;
             padding: 1rem;
@@ -121,17 +126,86 @@
         white-space: pre-line;
         }
 
+        #factory-info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            max-width: 800px;
+            width: 90%;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        #factory-info h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        #factory-info p {
+            margin: 10px 0;
+            line-height: 1.6;
+            color: #34495e;
+        }
+
+        #factory-info strong {
+            color: #2c3e50;
+        }
+
+        #factory-info img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        #factory-info button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #7f8c8d;
+            transition: color 0.3s;
+        }
+
+        #factory-info button:hover {
+            color: #2c3e50;
+        }
+
+        .leaflet-popup-content {
+            max-width: 300px;
+        }
+
+        .leaflet-popup-content h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .leaflet-popup-content p {
+            margin: 5px 0;
+            line-height: 1.4;
+            color: #34495e;
+        }
+
+        .leaflet-popup-content strong {
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <a href="map.html" class="logo" style="text-decoration: none; color: inherit;">GeoMapEd</a>
         <nav>
-            <a href="#">Басты бет</a>
+            <a href="index.html">Басты бет</a>
             <a href="catalog.html">Каталог</a>
             <a href="course-section-1.html">Курстар</a>
             <a href="#">Блог</a>
-            <a href="#">Біз туралы</a>
+            <a href="about.html">Біз туралы</a>
         </nav>
         <div class="profile">
             <img src="x.jpg" alt="Профиль">
@@ -818,248 +892,262 @@
                                 }
                             }
                             </script>
+    
+                            <br><br>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="tab3" role="tabpanel">
+                        
+                        
+                            <h3>Тақырыптық тест</h3>
+                        
+                            <form id="quiz-form">
+                                <ol>
+                                    <li>Химия өнеркәсібі дегеніміз не?
+                                        <ul>
+                                            <li><input type="radio" name="q1" value="A"> A) Ауыл шаруашылығының бір саласы</li>
+                                            <li><input type="radio" name="q1" value="B"> B) Дәрі-дәрмек өндіру орны</li>
+                                            <li><input type="radio" name="q1" value="C"> C) Химиялық заттар мен материалдар өндіретін сала</li>
+                                            <li><input type="radio" name="q1" value="D"> D) Тек қана зертханалық тәжірибе жасау</li>
+                                        </ul>
+                                    </li>
+                                    <hr>
+                                    <li>Химия өнеркәсібінде қандай өнімдер шығарылады?
+                                        <ul>
+                                            <li><input type="radio" name="q2" value="A"> A) Мұнай мен көмір</li>
+                                            <li><input type="radio" name="q2" value="B"> B) Тыңайтқыштар, пластмасса, бояу</li>
+                                            <li><input type="radio" name="q2" value="C"> C) Жеміс-жидек</li>
+                                            <li><input type="radio" name="q2" value="D"> D) Металл бөлшектері</li>
+                                        </ul>
+                                    </li>
+                                    <hr>
+                                    <li>Химия өнеркәсібінің негізгі шикізаты:
+                                        <ul>
+                                            <li><input type="radio" name="q3" value="A"> A) Су</li>
+                                            <li><input type="radio" name="q3" value="B"> B) Мұнай, газ, фосфорит</li>
+                                            <li><input type="radio" name="q3" value="C"> C) Ағаш</li>
+                                            <li><input type="radio" name="q3" value="D"> D) Құм мен тас</li>
+                                        </ul>
+                                    </li>
+                                    <hr>
+                                    <li>Минерал тыңайтқыштар қай салада қолданылады?
+                                        <ul>
+                                            <li><input type="radio" name="q4" value="A"> A) Жеңіл өнеркәсіп</li>
+                                            <li><input type="radio" name="q4" value="B"> B) Құрылыс</li>
+                                            <li><input type="radio" name="q4" value="C"> C) Ауыл шаруашылығы</li>
+                                            <li><input type="radio" name="q4" value="D"> D) Байланыс</li>
+                                        </ul>
+                                    </li>
+                                    <hr>
+                                    <li>Химия өнеркәсібі қандай өнеркәсіп түріне жатады?
+                                        <ul>
+                                            <li><input type="radio" name="q5" value="A"> A) Өңдеу өнеркәсібі</li>
+                                            <li><input type="radio" name="q5" value="B"> B) Тау-кен өнеркәсібі</li>
+                                            <li><input type="radio" name="q5" value="C"> C) Электр энергетикасы</li>
+                                            <li><input type="radio" name="q5" value="D"> D) Ағаш өңдеу өнеркәсібі</li>
+                                        </ul>
+                                    </li>
+                                    <hr>
+                                    <li>Химия өнеркәсібінде алынған полимерлер қайда қолданылады?
+                                        <ul>
+                                            <li><input type="radio" name="q6" value="A"> A) Тамақ өнеркәсібінде</li>
+                                            <li><input type="radio" name="q6" value="B"> B) Медицина, тұрмыс заттары, құрылыс саласында</li>
+                                            <li><input type="radio" name="q6" value="C"> C) Ғарыш саласында ғана</li>
+                                            <li><input type="radio" name="q6" value="D"> D) Тек қана ауыл шаруашылығында</li>
+                                        </ul>
+                                    </li>
+                                    <hr>
+                                    <li>Қышқылдар мен сілтілер қандай өндірісте пайдаланылады?
+                                        <ul>
+                                            <li><input type="radio" name="q7" value="A"> A) Азық-түлік</li>
+                                            <li><input type="radio" name="q7" value="B"> B) Тұрмыстық техника</li>
+                                            <li><input type="radio" name="q7" value="C"> C) Металл өңдеу және тазарту</li>
+                                            <li><input type="radio" name="q7" value="D"> D) Медицинада ғана</li>
+                                        </ul>
+                                    </li>
+                                    <hr>
+                                    <li>Химия өнеркәсібінің қоршаған ортаға әсері:
+                                        <ul>
+                                            <li><input type="radio" name="q8" value="A"> A) Мүлде әсер етпейді</li>
+                                            <li><input type="radio" name="q8" value="B"> B) Тек пайдалы әсері бар</li>
+                                            <li><input type="radio" name="q8" value="C"> C) Қалдықтар арқылы ластайды</li>
+                                            <li><input type="radio" name="q8" value="D"> D) Тек су көздерін жақсартады</li>
+                                        </ul>
+                                    </li>
+                                    <hr>
+                                    <li>Химия өнеркәсібі экономика үшін неге маңызды?
+                                        <ul>
+                                            <li><input type="radio" name="q9" value="A"> A) Өнімділікті азайтады</li>
+                                            <li><input type="radio" name="q9" value="B"> B) Халық санына әсер етеді</li>
+                                            <li><input type="radio" name="q9" value="C"> C) Әртүрлі салаға қажетті өнімдермен қамтамасыз етеді</li>
+                                            <li><input type="radio" name="q9" value="D"> D) Суға тәуелділікті арттырады</li>
+                                        </ul>
+                                    </li>
+                                    <hr>
+                                    <li>Химия өнеркәсібіндегі қауіпсіздік ережелері не үшін қажет?
+                                        <ul>
+                                            <li><input type="radio" name="q10" value="A"> A) Жұмыс уақытын қысқарту үшін</li>
+                                            <li><input type="radio" name="q10" value="B"> B) Қызметкерлерді қорғау және апаттардың алдын алу үшін</li>
+                                            <li><input type="radio" name="q10" value="C"> C) Жалақыны көбейту үшін</li>
+                                            <li><input type="radio" name="q10" value="D"> D) Құжаттарды дұрыс рәсімдеу үшін</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+
+                                <div class="mt-4 text-center">
+                                    <div id="warning" class="alert alert-warning d-none"></div>
+                                    <div id="result" class="alert alert-success d-none"></div>
+                                    <div id="score-count" class="mt-2 fw-bold text-success d-none"></div>
+                                
+                                    <button type="button" id="check-btn" class="btn btn-primary">Тексеру</button>
+                                </div>
+                                <br><br><br>
+                            </form>
+
+                        
+                        </div>
+
+                        <script>
+                            document.getElementById("check-btn").addEventListener("click", function () {
+                                const correctAnswers = {
+                                    q1: "C",
+                                    q2: "B",
+                                    q3: "B",
+                                    q4: "C",
+                                    q5: "A",
+                                    q6: "B",
+                                    q7: "C",
+                                    q8: "C",
+                                    q9: "C",
+                                    q10: "B"
+                                };
+                        
+                                const warningDiv = document.getElementById("warning");
+                                const resultDiv = document.getElementById("result");
+                                const scoreCount = document.getElementById("score-count");
+                        
+                                // Сброс предыдущего состояния
+                                warningDiv.classList.add("d-none");
+                                resultDiv.classList.add("d-none");
+                                scoreCount.classList.add("d-none");
+                        
+                                document.querySelectorAll("form input[type=radio]").forEach(input => {
+                                    input.parentElement.style.backgroundColor = "";
+                                });
+                        
+                                let score = 0;
+                                let total = Object.keys(correctAnswers).length;
+                                let unanswered = [];
+                        
+                                // Проверка на незаполненные вопросы
+                                for (let key in correctAnswers) {
+                                    let selected = document.querySelector(`input[name="${key}"]:checked`);
+                                    if (!selected) {
+                                        unanswered.push(key);
+                                    }
+                                }
+                        
+                                if (unanswered.length > 0) {
+                                    warningDiv.textContent = `Барлық сұрақтарға жауап беріңіз! (${unanswered.length} сұрақ белгіленбеген)`;
+                                    warningDiv.classList.remove("d-none");
+                                    return;
+                                }
+                        
+                                // Подсчёт правильных ответов
+                                for (let key in correctAnswers) {
+                                    let selected = document.querySelector(`input[name="${key}"]:checked`);
+                                    if (selected.value === correctAnswers[key]) {
+                                        score++;
+                                        selected.parentElement.style.backgroundColor = "#d4edda"; // зелёный
+                                    } else {
+                                        selected.parentElement.style.backgroundColor = "#f8d7da"; // красный
+                                        let correctInput = document.querySelector(`input[name="${key}"][value="${correctAnswers[key]}"]`);
+                                        if (correctInput) {
+                                            correctInput.parentElement.style.backgroundColor = "#d1ecf1"; // голубой
+                                        }
+                                    }
+                                }
+                        
+                                // Отображение результатов
+                                scoreCount.textContent = `Дұрыс жауаптар саны: ${score}`;
+                                scoreCount.classList.remove("d-none");
+                        
+                                resultDiv.textContent = `Нәтиже: ${score} / ${total} дұрыс жауап бердіңіз.`;
+                                resultDiv.classList.remove("d-none");
+                            });
+                        </script>
                         
                         <div class="tab-pane fade" id="tab4" role="tabpanel">
                             <h3>Картамен практикалық жұмыс</h3>
-                            
+
                             <div class="row mt-4">
                                 <div class="col-12">
                                     <div id="sidebar" style="width: 23%; height: 600px; float: left; overflow-y: auto; border-right: 2px solid #ccc; background-color: #f9f9f9; padding: 10px;">
-                                        <h2>Объекты</h2>
-                                        <div class="category" data-group="metallurgy">Металлургия</div>
-                                        <ul class="factory-list" data-group="metallurgy">
-                                            <li class="subcategory" data-group="blackMetallurgy">Қара металлургия</li>
-                                            <ul class="subcategory-list" data-group="blackMetallurgy" style="display: none;">
-                                                <li data-group="blackMetallurgy" data-index="0">Теміртау металлургия комбинаты</li>
-                                                <li data-group="blackMetallurgy" data-index="1">Павлодар металлургия зауыты</li>
-                                                <li data-group="blackMetallurgy" data-index="2">Шығыс Қазақстан металлургия зауыты</li>
+                                        <h2>Кәсіпорындар</h2>
+                                        <div class="category" data-group="inorganicChemistry">Бейорганикалық химия және негізгі химикаттар</div>
+                                        <ul class="factory-list" data-group="inorganicChemistry">
+                                            <li data-group="inorganicChemistry" data-index="0">«Ақтөбе хром қосындылары зауыты» АҚ (АХҚЗ)</li>
+                                            <li data-group="inorganicChemistry" data-index="1">«Каустик» АҚ (Павлодар)</li>
+                                            <li data-group="inorganicChemistry" data-index="2">«СКЗ-U» ЖШС (Қызылорда қаласы)</li>
+                                            <li data-group="inorganicChemistry" data-index="3">«СП СКЗ Казатомпром» ЖШС Қызылорда облысы</li>
+                                            <li data-group="inorganicChemistry" data-index="4">«Тау-Кен Temir» ЖШС (SILICIUM KAZAKHSTAN) Қарағанды қаласы</li>
+                                            <li data-group="inorganicChemistry" data-index="5">«Жезқазғанредмет» РМК Ұлытау облысы, Жезқазған қаласы</li>
+                                            <li data-group="inorganicChemistry" data-index="6">«Реагент-Восток» ЖШС (Павлодар)</li>
                                             </ul>
-                                            <li class="subcategory" data-group="nonFerrousMetallurgy">Түсті металлургия</li>
-                                            <ul class="subcategory-list" data-group="nonFerrousMetallurgy" style="display: none;">
-                                                <li data-group="nonFerrousMetallurgy" data-index="0">Өскемен металлургия зауыты</li>
-                                                <li data-group="nonFerrousMetallurgy" data-index="1">Риддер металлургия зауыты</li>
-                                                <li data-group="nonFerrousMetallurgy" data-index="2">Ақсу металлургия зауыты</li>
-                                                <li data-group="nonFerrousMetallurgy" data-index="3">Хромтау металлургия зауыты</li>
-                                                <li data-group="nonFerrousMetallurgy" data-index="4">Балқаш металлургия зауыты</li>
-                                                <li data-group="nonFerrousMetallurgy" data-index="5">Жезқазған металлургия зауыты</li>
-                                                <li data-group="nonFerrousMetallurgy" data-index="6">Шетпе металлургия зауыты</li>
-                                                <li data-group="nonFerrousMetallurgy" data-index="7">Атырау металлургия зауыты</li>
-                                                <li data-group="nonFerrousMetallurgy" data-index="8">Шымкент металлургия зауыты</li>
+
+                                        <div class="category" data-group="agriculturalChemistry">Ауыл шаруашылық химиясы және минералды тыңайтқыштар</div>
+                                        <ul class="factory-list" data-group="agriculturalChemistry">
+                                            <li data-group="agriculturalChemistry" data-index="0">«Казфосфат» ЖШС Жамбыл облысы</li>
+                                            <li data-group="agriculturalChemistry" data-index="1">«КазАзот» АҚ Маңғыстау облысы, Ақтау қаласы</li>
+                                            <li data-group="agriculturalChemistry" data-index="2">«Кайнар» ЖШС Жамбыл облысы</li>
+                                            <li data-group="agriculturalChemistry" data-index="3">«КосАгроКоммерц» ЖШС Қарағанды облысы</li>
+                                            <li data-group="agriculturalChemistry" data-index="4">«Talas Investment Company» ЖШС Жамбыл облысы</li>
+                                            <li data-group="agriculturalChemistry" data-index="5">«ХАЗРАТ-АЛИ-АКБАР» ЖШС Алматы қаласы</li>
                                             </ul>
-                                            <li class="subcategory" data-group="heavyMetallurgy">Ауыр металлургия және арнайы қорытпалар</li>
-                                            <ul class="subcategory-list" data-group="heavyMetallurgy" style="display: none;">
-                                                <li data-group="heavyMetallurgy" data-index="0">Текелі металлургия зауыты</li>
-                                                <li data-group="heavyMetallurgy" data-index="1">Рудный металлургия зауыты</li>
-                                                <li data-group="heavyMetallurgy" data-index="2">Лисаковск металлургия зауыты</li>
-                                                <li data-group="heavyMetallurgy" data-index="3">Шығыс Қазақстан металлургия зауыты</li>
+
+                                        <div class="category" data-group="industrialChemistry">Өнеркәсіптік және құрылыс химиясы</div>
+                                        <ul class="factory-list" data-group="industrialChemistry">
+                                            <li data-group="industrialChemistry" data-index="0">«Eurotech Industries Ltd» ЖШС</li>
+                                            <li data-group="industrialChemistry" data-index="1">«Рауан Налко» ЖШС Атырау</li>
+                                            <li data-group="industrialChemistry" data-index="2">«ДосМунайХим» ЖШС Атырау қаласы</li>
+                                            <li data-group="industrialChemistry" data-index="3">«ОргСинтез Казахстан» ЖШС Қарағанды қаласы</li>
                                             </ul>
+
+                                        <div class="category" data-group="explosives">Жарылғыш заттар және арнайы химия</div>
+                                        <ul class="factory-list" data-group="explosives">
+                                            <li data-group="explosives" data-index="0">«Каз ЦКУБ «Нитрохим» ЖШС Ақтөбе облысы</li>
+                                            <li data-group="explosives" data-index="1">«Орика-Казахстан» АҚ Усть-Каменогорск</li>
                                         </ul>
-                                        <div class="category" data-group="machineBuilding">Машина жасау кешені</div>
-                                        <ul class="factory-list" data-group="machineBuilding">
-                                            <li class="subcategory" data-group="agriculturalMachinery">Ауыл шаруашылығы машиналарын жасау</li>
-                                            <ul class="subcategory-list" data-group="agriculturalMachinery" style="display: none;">
-                                                <li data-group="agriculturalMachinery" data-index="0">Петропавл машина жасау зауыты</li>
-                                                <li data-group="agriculturalMachinery" data-index="1">Қостанай машина жасау зауыты</li>
-                                                <li data-group="agriculturalMachinery" data-index="2">Көкшетау машина жасау зауыты</li>
+
+                                        <div class="category" data-group="householdChemistry">Тұрмыстық химия және жуу құралдары</div>
+                                        <ul class="factory-list" data-group="householdChemistry">
+                                            <li data-group="householdChemistry" data-index="0">«Компания ЭКОХИМ» ЖШС Ақтөбе облысы</li>
                                             </ul>
-                                            <li class="subcategory" data-group="transportMachinery">Көлік құрастыру және автомобиль жасау</li>
-                                            <ul class="subcategory-list" data-group="transportMachinery" style="display: none;">
-                                                <li data-group="transportMachinery" data-index="0">Қостанай автомобиль зауыты</li>
-                                                <li data-group="transportMachinery" data-index="1">Алматы автомобиль зауыты</li>
-                                                <li data-group="transportMachinery" data-index="2">Шымкент автомобиль зауыты</li>
-                                                <li data-group="transportMachinery" data-index="3">Астана автомобиль зауыты</li>
+
+                                        <div class="category" data-group="polymers">Полимерлер және резеңке-техникалық бұйымдар</div>
+                                        <ul class="factory-list" data-group="polymers">
+                                            <li data-group="polymers" data-index="0">Қарағанды резеңке-техникалық бұйымдар зауыты Қарағанды қаласы</li>
+                                            <li data-group="polymers" data-index="1">«НаИл» ЖШС Қарағанды қаласы</li>
                                             </ul>
-                                            <li class="subcategory" data-group="miningMachinery">Тау-кен, мұнай-газ және металлургиялық жабдықтар</li>
-                                            <ul class="subcategory-list" data-group="miningMachinery" style="display: none;">
-                                                <li data-group="miningMachinery" data-index="0">Павлодар машина жасау зауыты</li>
-                                                <li data-group="miningMachinery" data-index="1">Өскемен машина жасау зауыты</li>
-                                                <li data-group="miningMachinery" data-index="2">Атырау машина жасау зауыты</li>
-                                                <li data-group="miningMachinery" data-index="3">Қарағанды машина жасау зауыты</li>
+
+                                        <div class="category" data-group="holdings">Кешенді химия холдингтері мен инвестициялық жобалар</div>
+                                        <ul class="factory-list" data-group="holdings">
+                                            <li data-group="holdings" data-index="0">Samruk-Kazyna Ondeu Астана</li>
+                                            <li data-group="holdings" data-index="1">«ЕвроХим-Каратау» ЖШС Алматы қаласы</li>
                                             </ul>
-                                            <li class="subcategory" data-group="electricalMachinery">Электротехникалық және теміржол жабдықтары</li>
-                                            <ul class="subcategory-list" data-group="electricalMachinery" style="display: none;">
-                                                <li data-group="electricalMachinery" data-index="0">Алматы электротехникалық зауыты</li>
-                                                <li data-group="electricalMachinery" data-index="1">Екібастұз электротехникалық зауыты</li>
-                                                <li data-group="electricalMachinery" data-index="2">Астана электротехникалық зауыты</li>
-                                                <li data-group="electricalMachinery" data-index="3">Шымкент электротехникалық зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="militaryMachinery">Әскери және ауыр машина жасау</li>
-                                            <ul class="subcategory-list" data-group="militaryMachinery" style="display: none;">
-                                                <li data-group="militaryMachinery" data-index="0">Петропавл әскери техника зауыты</li>
-                                                <li data-group="militaryMachinery" data-index="1">Талғар әскери техника зауыты</li>
-                                                <li data-group="militaryMachinery" data-index="2">Астана әскери техника зауыты</li>
-                                            </ul>
-                                        </ul>
-                                        <div class="category" data-group="woodProcessing">Ағаш өңдеу өнеркәсібі</div>
-                                        <ul class="factory-list" data-group="woodProcessing">
-                                            <li class="subcategory" data-group="northKazakhstan">Солтүстік Қазақстан облысы</li>
-                                            <ul class="subcategory-list" data-group="northKazakhstan" style="display: none;">
-                                                <li data-group="northKazakhstan" data-index="0">Петропавл ағаш өңдеу зауыты</li>
-                                                <li data-group="northKazakhstan" data-index="1">Тайынша ағаш өңдеу зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="eastKazakhstan">Шығыс Қазақстан облысы</li>
-                                            <ul class="subcategory-list" data-group="eastKazakhstan" style="display: none;">
-                                                <li data-group="eastKazakhstan" data-index="0">Өскемен ағаш өңдеу зауыты</li>
-                                                <li data-group="eastKazakhstan" data-index="1">Риддер ағаш өңдеу зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="kostanay">Қостанай облысы</li>
-                                            <ul class="subcategory-list" data-group="kostanay" style="display: none;">
-                                                <li data-group="kostanay" data-index="0">Қостанай ағаш өңдеу зауыты</li>
-                                                <li data-group="kostanay" data-index="1">Лисаковск ағаш өңдеу зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="akmola">Ақмола облысы</li>
-                                            <ul class="subcategory-list" data-group="akmola" style="display: none;">
-                                                <li data-group="akmola" data-index="0">Көкшетау ағаш өңдеу зауыты</li>
-                                                <li data-group="akmola" data-index="1">Степногорск ағаш өңдеу зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="almaty">Алматы қаласы және Алматы облысы</li>
-                                            <ul class="subcategory-list" data-group="almaty" style="display: none;">
-                                                <li data-group="almaty" data-index="0">Алматы ағаш өңдеу зауыты</li>
-                                                <li data-group="almaty" data-index="1">Талғар ағаш өңдеу зауыты</li>
-                                                <li data-group="almaty" data-index="2">Қаскелең ағаш өңдеу зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="karaganda">Қарағанды облысы</li>
-                                            <ul class="subcategory-list" data-group="karaganda" style="display: none;">
-                                                <li data-group="karaganda" data-index="0">Қарағанды ағаш өңдеу зауыты</li>
-                                                <li data-group="karaganda" data-index="1">Теміртау ағаш өңдеу зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="turkistan">Түркістан облысы</li>
-                                            <ul class="subcategory-list" data-group="turkistan" style="display: none;">
-                                                <li data-group="turkistan" data-index="0">Шымкент ағаш өңдеу зауыты</li>
-                                                <li data-group="turkistan" data-index="1">Түркістан ағаш өңдеу зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="zhambyl">Жамбыл облысы</li>
-                                            <ul class="subcategory-list" data-group="zhambyl" style="display: none;">
-                                                <li data-group="zhambyl" data-index="0">Тараз ағаш өңдеу зауыты</li>
-                                                <li data-group="zhambyl" data-index="1">Шу ағаш өңдеу зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="pavlodar">Павлодар облысы</li>
-                                            <ul class="subcategory-list" data-group="pavlodar" style="display: none;">
-                                                <li data-group="pavlodar" data-index="0">Павлодар ағаш өңдеу зауыты</li>
-                                                <li data-group="pavlodar" data-index="1">Екібастұз ағаш өңдеу зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="westKazakhstan">Батыс Қазақстан облысы</li>
-                                            <ul class="subcategory-list" data-group="westKazakhstan" style="display: none;">
-                                                <li data-group="westKazakhstan" data-index="0">Орал ағаш өңдеу зауыты</li>
-                                                <li data-group="westKazakhstan" data-index="1">Ақсай ағаш өңдеу зауыты</li>
-                                            </ul>
-                                        </ul>
-                                        <div class="category" data-group="constructionMaterials">Құрылыс материалдары өнеркәсібі</div>
-                                        <ul class="factory-list" data-group="constructionMaterials">
-                                            <li class="subcategory" data-group="almatyConstruction">Алматы қаласы және Алматы облысы</li>
-                                            <ul class="subcategory-list" data-group="almatyConstruction" style="display: none;">
-                                                <li data-group="almatyConstruction" data-index="0">Алматы құрылыс материалдары зауыты</li>
-                                                <li data-group="almatyConstruction" data-index="1">Қаскелең құрылыс материалдары зауыты</li>
-                                                <li data-group="almatyConstruction" data-index="2">Талғар құрылыс материалдары зауыты</li>
-                                                <li data-group="almatyConstruction" data-index="3">Есік құрылыс материалдары зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="karagandaConstruction">Қарағанды облысы</li>
-                                            <ul class="subcategory-list" data-group="karagandaConstruction" style="display: none;">
-                                                <li data-group="karagandaConstruction" data-index="0">Қарағанды құрылыс материалдары зауыты</li>
-                                                <li data-group="karagandaConstruction" data-index="1">Теміртау құрылыс материалдары зауыты</li>
-                                                <li data-group="karagandaConstruction" data-index="2">Саран құрылыс материалдары зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="shymkentConstruction">Шымкент қаласы және Түркістан облысы</li>
-                                            <ul class="subcategory-list" data-group="shymkentConstruction" style="display: none;">
-                                                <li data-group="shymkentConstruction" data-index="0">Шымкент құрылыс материалдары зауыты</li>
-                                                <li data-group="shymkentConstruction" data-index="1">Түркістан құрылыс материалдары зауыты</li>
-                                                <li data-group="shymkentConstruction" data-index="2">Кентау құрылыс материалдары зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="akmolaConstruction">Ақмола облысы</li>
-                                            <ul class="subcategory-list" data-group="akmolaConstruction" style="display: none;">
-                                                <li data-group="akmolaConstruction" data-index="0">Степногорск құрылыс материалдары зауыты</li>
-                                                <li data-group="akmolaConstruction" data-index="1">Көкшетау құрылыс материалдары зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="pavlodarConstruction">Павлодар облысы</li>
-                                            <ul class="subcategory-list" data-group="pavlodarConstruction" style="display: none;">
-                                                <li data-group="pavlodarConstruction" data-index="0">Павлодар құрылыс материалдары зауыты</li>
-                                                <li data-group="pavlodarConstruction" data-index="1">Екібастұз құрылыс материалдары зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="eastKazakhstanConstruction">Шығыс Қазақстан облысы</li>
-                                            <ul class="subcategory-list" data-group="eastKazakhstanConstruction" style="display: none;">
-                                                <li data-group="eastKazakhstanConstruction" data-index="0">Өскемен құрылыс материалдары зауыты</li>
-                                                <li data-group="eastKazakhstanConstruction" data-index="1">Семей құрылыс материалдары зауыты</li>
-                                                <li data-group="eastKazakhstanConstruction" data-index="2">Риддер құрылыс материалдары зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="kostanayConstruction">Қостанай облысы</li>
-                                            <ul class="subcategory-list" data-group="kostanayConstruction" style="display: none;">
-                                                <li data-group="kostanayConstruction" data-index="0">Қостанай құрылыс материалдары зауыты</li>
-                                                <li data-group="kostanayConstruction" data-index="1">Лисаковск құрылыс материалдары зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="atyrauConstruction">Атырау облысы</li>
-                                            <ul class="subcategory-list" data-group="atyrauConstruction" style="display: none;">
-                                                <li data-group="atyrauConstruction" data-index="0">Атырау құрылыс материалдары зауыты</li>
-                                                <li data-group="atyrauConstruction" data-index="1">Индер құрылыс материалдары зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="aktobeConstruction">Ақтөбе облысы</li>
-                                            <ul class="subcategory-list" data-group="aktobeConstruction" style="display: none;">
-                                                <li data-group="aktobeConstruction" data-index="0">Ақтөбе құрылыс материалдары зауыты</li>
-                                                <li data-group="aktobeConstruction" data-index="1">Хромтау құрылыс материалдары зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="westKazakhstanConstruction">Батыс Қазақстан облысы</li>
-                                            <ul class="subcategory-list" data-group="westKazakhstanConstruction" style="display: none;">
-                                                <li data-group="westKazakhstanConstruction" data-index="0">Орал құрылыс материалдары зауыты</li>
-                                                <li data-group="westKazakhstanConstruction" data-index="1">Ақсай құрылыс материалдары зауыты</li>
-                                            </ul>
-                                        </ul>
-                                        <div class="category" data-group="chemicalIndustry">Химия өнеркәсібі</div>
-                                        <ul class="factory-list" data-group="chemicalIndustry">
-                                            <li class="subcategory" data-group="phosphorusFertilizers">Фосфор тыңайтқыштары өнеркәсібі</li>
-                                            <ul class="subcategory-list" data-group="phosphorusFertilizers" style="display: none;">
-                                                <li data-group="phosphorusFertilizers" data-index="0">Тараз фосфор тыңайтқыш зауыты</li>
-                                                <li data-group="phosphorusFertilizers" data-index="1">Ақтөбе фосфор тыңайтқыш зауыты</li>
-                                                <li data-group="phosphorusFertilizers" data-index="2">Жамбыл фосфор тыңайтқыш зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="nitrogenFertilizers">Азот тыңайтқыштары өнеркәсібі</li>
-                                            <ul class="subcategory-list" data-group="nitrogenFertilizers" style="display: none;">
-                                                <li data-group="nitrogenFertilizers" data-index="0">Ақтау азот тыңайтқыш зауыты</li>
-                                                <li data-group="nitrogenFertilizers" data-index="1">Теміртау азот тыңайтқыш зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="sodaSalt">Сода және тұз өнеркәсібі</li>
-                                            <ul class="subcategory-list" data-group="sodaSalt" style="display: none;">
-                                                <li data-group="sodaSalt" data-index="0">Павлодар сода зауыты</li>
-                                                <li data-group="sodaSalt" data-index="1">Арал тұз зауыты</li>
-                                                <li data-group="sodaSalt" data-index="2">Балқаш тұз зауыты</li>
-                                                <li data-group="sodaSalt" data-index="3">Қалқаман тұз зауыты</li>
-                                                <li data-group="sodaSalt" data-index="4">Тобылжан тұз зауыты</li>
-                                                <li data-group="sodaSalt" data-index="5">Индер тұз зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="sulfuricAcid">Күкірт қышқылы өндірісі</li>
-                                            <ul class="subcategory-list" data-group="sulfuricAcid" style="display: none;">
-                                                <li data-group="sulfuricAcid" data-index="0">Алексеев күкірт қышқылы зауыты</li>
-                                                <li data-group="sulfuricAcid" data-index="1">Қарағанды күкірт қышқылы зауыты</li>
-                                                <li data-group="sulfuricAcid" data-index="2">Шымкент күкірт қышқылы зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="polymers">Полимерлер және пластмасса өнеркәсібі</li>
-                                            <ul class="subcategory-list" data-group="polymers" style="display: none;">
-                                                <li data-group="polymers" data-index="0">Ақтау полимер зауыты</li>
-                                                <li data-group="polymers" data-index="1">Атырау полимер зауыты</li>
-                                                <li data-group="polymers" data-index="2">Алматы полимер зауыты</li>
-                                                <li data-group="polymers" data-index="3">Астана полимер зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="syntheticRubber">Синтетикалық коксагыз өнеркәсібі</li>
-                                            <ul class="subcategory-list" data-group="syntheticRubber" style="display: none;">
-                                                <li data-group="syntheticRubber" data-index="0">Теміртау синтетикалық коксагыз зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="petrochemicals">Мұнай химиясы</li>
-                                            <ul class="subcategory-list" data-group="petrochemicals" style="display: none;">
-                                                <li data-group="petrochemicals" data-index="0">Қарабатан мұнай химия зауыты</li>
-                                                <li data-group="petrochemicals" data-index="1">Атырау мұнай химия зауыты</li>
-                                                <li data-group="petrochemicals" data-index="2">Павлодар мұнай химия зауыты</li>
-                                                <li data-group="petrochemicals" data-index="3">Шымкент мұнай химия зауыты</li>
-                                            </ul>
-                                            <li class="subcategory" data-group="pharmaceuticals">Фармацевтика өнеркәсібі</li>
-                                            <ul class="subcategory-list" data-group="pharmaceuticals" style="display: none;">
-                                                <li data-group="pharmaceuticals" data-index="0">Павлодар фармацевтика зауыты</li>
-                                                <li data-group="pharmaceuticals" data-index="1">Шымкент фармацевтика зауыты</li>
-                                                <li data-group="pharmaceuticals" data-index="2">Алматы фармацевтика зауыты</li>
-                                                <li data-group="pharmaceuticals" data-index="3">Алматы облысы фармацевтика зауыты</li>
-                                                <li data-group="pharmaceuticals" data-index="4">Қарағанды фармацевтика зауыты</li>
-                                                <li data-group="pharmaceuticals" data-index="5">Жамбыл фармацевтика зауыты</li>
-                                            </ul>
+
+                                        <div class="category" data-group="other">Өзге кәсіпорындар</div>
+                                        <ul class="factory-list" data-group="other">
+                                            <li data-group="other" data-index="0">«Азот зауыты» ЖШС Маңғыстау облысы, Ақтау қаласы</li>
+                                            <li data-group="other" data-index="1">«Актобехимкомбинат Кели» ЖШС Ақтөбе қаласы</li>
+                                            <li data-group="other" data-index="2">«Алматынефтехим А» ЖШС Алматы қаласы</li>
+                                            <li data-group="other" data-index="3">«Бугель-Кызылорда» ЖШС Қызылорда қаласы</li>
+                                            <li data-group="other" data-index="4">«Миком» ЖШС БАТЫС ҚАЗАҚСТАН ОБЛЫСЫ, ОРАЛ қаласы</li>
+                                            <li data-group="other" data-index="5">«Экоминералс» ЖШС Қарағанды қаласы</li>
                                         </ul>
                                     </div>
-                                    <div id="map2" style="height: 600px; width: 75%; float: right;"></div>
+                                    <div id="map2" style="height: 600px;"></div>
+                                    <div id="factory-info" style="display: none;"></div>
                                 </div>
                             </div>
 
@@ -1122,190 +1210,362 @@
 
                                 // Данные объектов
                                 const locations = {
-                                    metallurgy: [
-                                        { name: "Павлодар алюминий зауыты", coords: [52.297, 76.957] },
-                                        { name: "Ақсу ферросплав зауыты", coords: [52.040, 76.927] }
+                                    inorganicChemistry: [
+                                        { 
+                                            name: "«Ақтөбе хром қосындылары зауыты» АҚ (АХҚЗ)", 
+                                            coords: [50.283, 57.167],
+                                            info: {
+                                                year: "1965 жыл",
+                                                location: "Ақтөбе қаласы, Хромтау кенті",
+                                                products: "Хром қосындылары, феррохром",
+                                                capacity: "Жылына 1,2 млн тонна хром қосындылары"
+                                            },
+                                            image: "p13.jpg"
+                                        },
+                                        { 
+                                            name: "«Каустик» АҚ (Павлодар)", 
+                                            coords: [52.297, 76.957],
+                                            info: {
+                                                year: "2002 жыл",
+                                                location: "Павлодар қаласы, Солтүстік өнеркәсіптік аймақ",
+                                                products: "Каустикалық сода, сұйық хлор, тұз қышқылы, натрий гипохлориті",
+                                                capacity: "Жылына 30 мың тонна каустикалық сода, 26,4 мың тонна хлор, 45 мың тонна тұз қышқылы, 6,6 мың тонна натрий гипохлориті"
+                                            },
+                                            image: "p1.jpg"
+                                        },
+                                        { 
+                                            name: "«СКЗ-U» ЖШС (Қызылорда қаласы)", 
+                                            coords: [44.848, 65.482],
+                                            info: {
+                                                year: "2007 жыл",
+                                                location: "Қызылорда облысы, Жаңақорған ауданы",
+                                                products: "Күкірт қышқылын өндіру",
+                                                capacity: "Жылына 500 000 тонна",
+                                                additional: "Күн электр станциясы арқылы электр энергиясын өндіреді"
+                                            },
+                                            image: "p2.jpg"
+                                        },
+                                        { 
+                                            name: "«СП СКЗ Казатомпром» ЖШС Қызылорда облысы", 
+                                            coords: [44.848, 65.482],
+                                            info: {
+                                                year: "2015 жыл",
+                                                location: "Қызылорда облысы, Қызылорда қаласы",
+                                                products: "Сода, хлор, тұз қышқылы",
+                                                capacity: "Жылына 100 мың тонна сода",
+                                                additional: "Бұл өңір уранға бай, сондықтан кәсіпорынның осы аймақта орналасуы табиғи ресурстар факторымен тығыз байланысты. Сонымен қатар, бұл зауыттың орналасуы көлік инфрақұрылымына, атап айтқанда теміржол желісіне жақын болуымен ерекшеленеді. Қызылорда облысы уран өндірісімен танымал, сондықтан дайын өнімді экспортқа шығару да оңай. Еңбек ресурстары жағынан аймақтың халқы бұл салаға бейімделген, білікті мамандар жеткілікті. Климаттың құрғақ әрі шөлейт болуы ауыл шаруашылығына тиімсіз болғанымен, өнеркәсіптік нысандар үшін кедергі емес."
+                                            },
+                                            image: "p3.jpg"
+                                        },
+                                        { 
+                                            name: "«Тау-Кен Temir» ЖШС (SILICIUM KAZAKHSTAN) Қарағанды қаласы", 
+                                            coords: [49.803, 73.102],
+                                            info: {
+                                                year: "2008 жыл",
+                                                location: "Қарағанды қаласы, Қарағанды облысы",
+                                                products: "Кремний, ферросилиций",
+                                                capacity: "Жылына 25 мың тонна кремний",
+                                                additional: "Қарағанды — Қазақстандағы ірі индустриалды өңір, мұнда металлургия, көмір өндіру және ауыр өнеркәсіп жақсы дамыған. Кәсіпорынның металлургиялық кремний өндіруі осы аймақтағы табиғи шикізат базасына — кварциттер мен көмір қорларына негізделген. Қарағанды қаласы еліміздің орталығында орналасқандықтан, көлік жолдары арқылы еліміздің басқа аймақтарына, тіпті шетелге өнім тасымалдауға қолайлы. Сонымен қатар, Қарағандыда техникалық кадрлар дайындайтын оқу орындары бар, бұл жергілікті еңбек ресурстарының сапасын арттырады."
+                                            },
+                                            image: "p4.jpg"
+                                        },
+                                        { 
+                                            name: "«Жезқазғанредмет» РМК Ұлытау облысы, Жезқазған қаласы", 
+                                            coords: [47.783, 67.766],
+                                            info: {
+                                                year: "1997 жыл",
+                                                location: "Жезқазған қаласы, Ұлытау облысы",
+                                                products: "Металлургиялық концентраттар",
+                                                capacity: "Жылына 500 мың тонна концентрат",
+                                                additional: "Жезқазған — сирек және түсті металдарға бай өңір. Бұл кәсіпорынның аймақта орналасуы оның табиғи ресурстық базасымен түсіндіріледі. Жезқазған мыс, уран, сирек металдармен танымал, сол себепті өндірістік процестерге қажетті шикізат жақын маңда өндіріледі. Сонымен қатар, қалада арнайы дайындықтан өткен кадрлар бар, себебі бұл өңірде бұрыннан металлургия және тау-кен өнеркәсібі жақсы дамыған. Географиялық тұрғыда, теміржол арқылы өнімді тасымалдауға мүмкіндік бар, дегенмен алыс аймақтарға жеткізу кейбір логистикалық шығындарды ұлғайтуы мүмкін."
+                                            },
+                                            image: "p5.jpg"
+                                        },
+                                        { 
+                                            name: "«Реагент-Восток» ЖШС (Павлодар)", 
+                                            coords: [52.297, 76.957],
+                                            info: {
+                                                year: "2005 жыл",
+                                                location: "Павлодар қаласы, Павлодар облысы",
+                                                products: "Химиялық реагенттер",
+                                                capacity: "Жылына 20 мың тонна реагент"
+                                            },
+                                            image: ""
+                                        }
                                     ],
-                                    blackMetallurgy: [
-                                        { name: "Теміртау металлургия комбинаты", coords: [50.054, 72.964] },
-                                        { name: "Павлодар металлургия зауыты", coords: [52.297, 76.957] },
-                                        { name: "Шығыс Қазақстан металлургия зауыты", coords: [49.948, 82.628] }
+                                    agriculturalChemistry: [
+                                        { 
+                                            name: "«Казфосфат» ЖШС Жамбыл облысы", 
+                                            coords: [42.900, 71.366],
+                                            info: {
+                                                year: "1997 жыл",
+                                                location: "Жамбыл облысы, Тараз қаласы",
+                                                products: "Фосфор тыңайтқыштары, фосфорит ұны, сары фосфор, натрий триполифосфаты",
+                                                capacity: "Жылына 1 млн тонна тыңайтқыш",
+                                                additional: "«Казфосфат» ЖШС Жамбыл облысында орналасқан және фосфор өнеркәсібінің жетекші өкілі болып табылады. Компания фосфорит ұны, сары фосфор, натрий триполифосфаты және минералды тыңайтқыштар өндіреді. Өнімдерін ТМД және Еуропа елдеріне экспорттайды. Өндірістік тізбегі толық интеграцияланған, яғни шикізат өндіруден бастап, дайын өнімді жеткізуге дейінгі барлық кезеңдерді қамтиды. 2023 жылы компанияның кірісі 131,6 млрд теңгені құрады, бұл 2022 жылмен салыстырғанда 21,6% артық."
+                                            },
+                                            image: "p6.jpg"
+                                        },
+                                        { 
+                                            name: "«КазАзот» АҚ Маңғыстау облысы, Ақтау қаласы", 
+                                            coords: [43.652, 51.196],
+                                            info: {
+                                                year: "1959 жыл",
+                                                location: "Ақтау қаласы, Маңғыстау облысы",
+                                                products: "Аммиак, аммиак селитрасы, азот қышқылы және табиғи газ",
+                                                capacity: "Қазақстандағы аммиак пен аммиак селитрасының жалғыз өндірушісі",
+                                                additional: "Компания 2005 жылы Ақтау қаласында құрылған. Өнімдері ауыл шаруашылығы мен өнеркәсіпте кеңінен қолданылады. Компания өндірісін жаңғырту және экологиялық стандарттарды сақтау бағытында жұмыс жүргізуде. 2023 жылы компанияның кірісі 61,9 млрд теңге, ал таза пайдасы 21,7 млрд теңге болды."
+                                            },
+                                            image: "p7.jpg"
+                                        },
+                                        { 
+                                            name: "«Кайнар» ЖШС Жамбыл облысы", 
+                                            coords: [42.900, 71.366],
+                                            info: {
+                                                year: "2003 жыл",
+                                                location: "Жамбыл облысы, Тараз қаласы",
+                                                products: "Аккумулятор батареялары",
+                                                capacity: "Өндірістік қуаттылығы мен нарықтағы үлесі туралы нақты ақпарат шектеулі",
+                                                additional: "Компанияның өнімдері ТМД елдеріне экспортталады."
+                                            },
+                                            image: "p8.jpg"
+                                        },
+                                        { 
+                                            name: "«КосАгроКоммерц» ЖШС Қарағанды облысы", 
+                                            coords: [49.803, 73.102],
+                                            info: {
+                                                year: "1995 жыл",
+                                                location: "Қарағанды облысы, Қарағанды қаласы",
+                                                products: "Калий тыңайтқыштары мен пестицидтер",
+                                                capacity: "Өндірістік базасы мен қоймалары Қазақстанның бірнеше өңірінде орналасқан",
+                                                additional: "Компания 1995 жылдан бері жұмыс істейді. Өнімдері Қазақстанның бірнеше өңірінде таратылады. 2020 жылы PROCOTE технологиясын енгізіп, тыңайтқыштардың сапасын арттырды. Өндірістік базасы мен қоймалары Қазақстанның бірнеше өңірінде орналасқан, бұл өнімді тиімді таратуға мүмкіндік береді."
+                                            },
+                                            image: "p9.jpg"
+                                        },
+                                        { 
+                                            name: "«Talas Investment Company» ЖШС Жамбыл облысы", 
+                                            coords: [42.900, 71.366],
+                                            info: {
+                                                year: "2008 жыл",
+                                                location: "Жамбыл облысы, Қаратау қаласы",
+                                                products: "Натрий цианиді мен аммоний сульфаты",
+                                                capacity: "Жылына 15 000 тонна натрий цианиді мен 5 000 тонна аммоний сульфаты",
+                                                additional: "Компания 2008 жылы құрылған. Өнімдері алтын өндіру және химия өнеркәсібінде қолданылады. Компания экологиялық қауіпсіздік пен өндіріс тиімділігін арттыруға баса назар аударады. 2025 жылы зауыттың екінші кезеңі іске қосылып, натрий цианиді өндірісі 30 000 тоннаға дейін ұлғайтылады деп жоспарлануда."
+                                            },
+                                            image: "p10.jpg"
+                                        },
+                                        { 
+                                            name: "«ХАЗРАТ-АЛИ-АКБАР» ЖШС Алматы қаласы", 
+                                            coords: [43.222, 76.851],
+                                            info: {
+                                                year: "2008 жыл",
+                                                location: "Алматы қаласы",
+                                                products: "Азот тыңайтқыштары",
+                                                capacity: "Жылына 150 мың тонна тыңайтқыш",
+                                                additional: "«ХАЗРАТ-АЛИ-АКБАР» ЖШС – Алматы қаласында орналасқан, тыңайтқыштар мен өсімдіктерді қорғау құралдарын өндірумен айналысады. Компания өнімдерін көтерме және бөлшек сауда арқылы сатады, сондай-ақ интернет-дүкен арқылы тапсырыс қабылдайды. Кәсіпорынның өндірістік және сауда қызметі Алматы қаласында шоғырланған. Өнімдері Қазақстанның бірнеше өңірінде таратылады, соның ішінде Алматинская, Солтүстік Қазақстан, Павлодар, Оңтүстік Қазақстан, Жамбыл, Қызылорда және Шығыс Қазақстан облыстары."
+                                            },
+                                            image: "p11.jpg"
+                                        }
                                     ],
-                                    nonFerrousMetallurgy: [
-                                        { name: "Өскемен металлургия зауыты", coords: [49.948, 82.628] },
-                                        { name: "Риддер металлургия зауыты", coords: [50.344, 83.512] },
-                                        { name: "Ақсу металлургия зауыты", coords: [52.040, 76.927] },
-                                        { name: "Хромтау металлургия зауыты", coords: [50.250, 58.434] },
-                                        { name: "Балқаш металлургия зауыты", coords: [46.848, 74.995] },
-                                        { name: "Жезқазған металлургия зауыты", coords: [47.783, 67.766] },
-                                        { name: "Шетпе металлургия зауыты", coords: [44.166, 52.116] },
-                                        { name: "Атырау металлургия зауыты", coords: [47.123, 51.925] },
-                                        { name: "Шымкент металлургия зауыты", coords: [42.300, 69.600] }
+                                    industrialChemistry: [
+                                        { 
+                                            name: "«Eurotech Industries Ltd» ЖШС", 
+                                            coords: [43.222, 76.851],
+                                            info: {
+                                                year: "2012 жыл",
+                                                location: "Алматы қаласы",
+                                                products: "Өнеркәсіптік химикаттар",
+                                                capacity: "Жылына 100 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        },
+                                        { 
+                                            name: "«Рауан Налко» ЖШС Атырау", 
+                                            coords: [47.123, 51.925],
+                                            info: {
+                                                year: "2006 жыл",
+                                                location: "Атырау қаласы, Атырау облысы",
+                                                products: "Мұнай-газ саласына арналған химиялық реагенттер, өнеркәсіптік катализаторлар, ингибиторлар, пеногасительдер",
+                                                capacity: "Қазақстандағы химиялық реагенттер нарығында жетекші орын",
+                                                additional: "«Рауан Налко» ЖШС — Атырау қаласында орналасқан, өнеркәсіптік химия саласында қызмет көрсететін компания. Компанияның негізгі қызметі — мұнай-газ саласына арналған химиялық реагенттерді өндіру және жеткізу. Құрылтайшылар: Қазақстандық және америкалық серіктестердің бірлескен кәсіпорны, сәйкесінше 55% және 45% үлеске ие. 2012 жылғы мәлімет бойынша, компанияда 149 қызметкер жұмыс істеген."
+                                            },
+                                            image: "p12.jpg"
+                                        },
+                                        { 
+                                            name: "«ДосМунайХим» ЖШС Атырау қаласы", 
+                                            coords: [47.123, 51.925],
+                                            info: {
+                                                year: "2009 жыл",
+                                                location: "Атырау қаласы, Атырау облысы",
+                                                products: "Мұнай химиясы",
+                                                capacity: "Жылына 75 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        },
+                                        { 
+                                            name: "«ОргСинтез Казахстан» ЖШС Қарағанды қаласы", 
+                                            coords: [49.803, 73.102],
+                                            info: {
+                                                year: "2011 жыл",
+                                                location: "Қарағанды қаласы, Қарағанды облысы",
+                                                products: "Органикалық синтез өнімдері",
+                                                capacity: "Жылына 30 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        }
                                     ],
-                                    heavyMetallurgy: [
-                                        { name: "Текелі металлургия зауыты", coords: [44.830, 78.830] },
-                                        { name: "Рудный металлургия зауыты", coords: [52.972, 63.116] },
-                                        { name: "Лисаковск металлургия зауыты", coords: [52.547, 62.493] },
-                                        { name: "Шығыс Қазақстан металлургия зауыты", coords: [49.948, 82.628] }
+                                    explosives: [
+                                        { 
+                                            name: "«Каз ЦКУБ «Нитрохим» ЖШС Ақтөбе облысы", 
+                                            coords: [50.283, 57.167],
+                                            info: {
+                                                year: "1995 жыл",
+                                                location: "Ақтөбе қаласы, Ақтөбе облысы",
+                                                products: "Жарылғыш заттар",
+                                                capacity: "Жылына 20 мың тонна жарылғыш зат"
+                                            },
+                                            image: ""
+                                        },
+                                        { 
+                                            name: "«Орика-Казахстан» АҚ Усть-Каменогорск", 
+                                            coords: [49.948, 82.628],
+                                            info: {
+                                                year: "2000 жыл",
+                                                location: "Усть-Каменогорск қаласы, Шығыс Қазақстан облысы",
+                                                products: "Жарылғыш заттар",
+                                                capacity: "Жылына 15 мың тонна жарылғыш зат"
+                                            },
+                                            image: ""
+                                        }
                                     ],
-                                    agriculturalMachinery: [
-                                        { name: "Петропавл машина жасау зауыты", coords: [54.872, 69.143] },
-                                        { name: "Қостанай машина жасау зауыты", coords: [53.214, 63.624] },
-                                        { name: "Көкшетау машина жасау зауыты", coords: [53.283, 69.383] }
-                                    ],
-                                    transportMachinery: [
-                                        { name: "Қостанай автомобиль зауыты", coords: [53.214, 63.624] },
-                                        { name: "Алматы автомобиль зауыты", coords: [43.222, 76.851] },
-                                        { name: "Шымкент автомобиль зауыты", coords: [42.300, 69.600] },
-                                        { name: "Астана автомобиль зауыты", coords: [51.169, 71.449] }
-                                    ],
-                                    miningMachinery: [
-                                        { name: "Павлодар машина жасау зауыты", coords: [52.297, 76.957] },
-                                        { name: "Өскемен машина жасау зауыты", coords: [49.948, 82.628] },
-                                        { name: "Атырау машина жасау зауыты", coords: [47.123, 51.925] },
-                                        { name: "Қарағанды машина жасау зауыты", coords: [49.803, 73.102] }
-                                    ],
-                                    electricalMachinery: [
-                                        { name: "Алматы электротехникалық зауыты", coords: [43.222, 76.851] },
-                                        { name: "Екібастұз электротехникалық зауыты", coords: [51.729, 75.326] },
-                                        { name: "Астана электротехникалық зауыты", coords: [51.169, 71.449] },
-                                        { name: "Шымкент электротехникалық зауыты", coords: [42.300, 69.600] }
-                                    ],
-                                    militaryMachinery: [
-                                        { name: "Петропавл әскери техника зауыты", coords: [54.872, 69.143] },
-                                        { name: "Талғар әскери техника зауыты", coords: [43.302, 77.234] },
-                                        { name: "Астана әскери техника зауыты", coords: [51.169, 71.449] }
-                                    ],
-                                    northKazakhstan: [
-                                        { name: "Петропавл ағаш өңдеу зауыты", coords: [54.872, 69.143] },
-                                        { name: "Тайынша ағаш өңдеу зауыты", coords: [53.847, 69.760] }
-                                    ],
-                                    eastKazakhstan: [
-                                        { name: "Өскемен ағаш өңдеу зауыты", coords: [49.948, 82.628] },
-                                        { name: "Риддер ағаш өңдеу зауыты", coords: [50.344, 83.512] }
-                                    ],
-                                    kostanay: [
-                                        { name: "Қостанай ағаш өңдеу зауыты", coords: [53.214, 63.624] },
-                                        { name: "Лисаковск ағаш өңдеу зауыты", coords: [52.547, 62.493] }
-                                    ],
-                                    akmola: [
-                                        { name: "Көкшетау ағаш өңдеу зауыты", coords: [53.283, 69.383] },
-                                        { name: "Степногорск ағаш өңдеу зауыты", coords: [52.350, 71.883] }
-                                    ],
-                                    almaty: [
-                                        { name: "Алматы ағаш өңдеу зауыты", coords: [43.222, 76.851] },
-                                        { name: "Талғар ағаш өңдеу зауыты", coords: [43.302, 77.234] },
-                                        { name: "Қаскелең ағаш өңдеу зауыты", coords: [43.200, 76.633] }
-                                    ],
-                                    karaganda: [
-                                        { name: "Қарағанды ағаш өңдеу зауыты", coords: [49.803, 73.102] },
-                                        { name: "Теміртау ағаш өңдеу зауыты", coords: [50.054, 72.964] }
-                                    ],
-                                    turkistan: [
-                                        { name: "Шымкент ағаш өңдеу зауыты", coords: [42.300, 69.600] },
-                                        { name: "Түркістан ағаш өңдеу зауыты", coords: [43.297, 68.251] }
-                                    ],
-                                    zhambyl: [
-                                        { name: "Тараз ағаш өңдеу зауыты", coords: [42.900, 71.366] },
-                                        { name: "Шу ағаш өңдеу зауыты", coords: [43.598, 73.761] }
-                                    ],
-                                    pavlodar: [
-                                        { name: "Павлодар ағаш өңдеу зауыты", coords: [52.297, 76.957] },
-                                        { name: "Екібастұз ағаш өңдеу зауыты", coords: [51.729, 75.326] }
-                                    ],
-                                    westKazakhstan: [
-                                        { name: "Орал ағаш өңдеу зауыты", coords: [51.227, 51.386] },
-                                        { name: "Ақсай ағаш өңдеу зауыты", coords: [51.167, 52.997] }
-                                    ],
-                                    almatyConstruction: [
-                                        { name: "Алматы құрылыс материалдары зауыты", coords: [43.222, 76.851] },
-                                        { name: "Қаскелең құрылыс материалдары зауыты", coords: [43.200, 76.633] },
-                                        { name: "Талғар құрылыс материалдары зауыты", coords: [43.302, 77.234] },
-                                        { name: "Есік құрылыс материалдары зауыты", coords: [43.355, 77.467] }
-                                    ],
-                                    karagandaConstruction: [
-                                        { name: "Қарағанды құрылыс материалдары зауыты", coords: [49.803, 73.102] },
-                                        { name: "Теміртау құрылыс материалдары зауыты", coords: [50.054, 72.964] },
-                                        { name: "Саран құрылыс материалдары зауыты", coords: [49.790, 72.837] }
-                                    ],
-                                    shymkentConstruction: [
-                                        { name: "Шымкент құрылыс материалдары зауыты", coords: [42.300, 69.600] },
-                                        { name: "Түркістан құрылыс материалдары зауыты", coords: [43.297, 68.251] },
-                                        { name: "Кентау құрылыс материалдары зауыты", coords: [43.517, 68.504] }
-                                    ],
-                                    akmolaConstruction: [
-                                        { name: "Степногорск құрылыс материалдары зауыты", coords: [52.350, 71.883] },
-                                        { name: "Көкшетау құрылыс материалдары зауыты", coords: [53.283, 69.383] }
-                                    ],
-                                    pavlodarConstruction: [
-                                        { name: "Павлодар құрылыс материалдары зауыты", coords: [52.297, 76.957] },
-                                        { name: "Екібастұз құрылыс материалдары зауыты", coords: [51.729, 75.326] }
-                                    ],
-                                    eastKazakhstanConstruction: [
-                                        { name: "Өскемен құрылыс материалдары зауыты", coords: [49.948, 82.628] },
-                                        { name: "Семей құрылыс материалдары зауыты", coords: [50.411, 80.227] },
-                                        { name: "Риддер құрылыс материалдары зауыты", coords: [50.344, 83.512] }
-                                    ],
-                                    kostanayConstruction: [
-                                        { name: "Қостанай құрылыс материалдары зауыты", coords: [53.214, 63.624] },
-                                        { name: "Лисаковск құрылыс материалдары зауыты", coords: [52.547, 62.493] }
-                                    ],
-                                    atyrauConstruction: [
-                                        { name: "Атырау құрылыс материалдары зауыты", coords: [47.123, 51.925] },
-                                        { name: "Индер құрылыс материалдары зауыты", coords: [48.550, 53.467] }
-                                    ],
-                                    aktobeConstruction: [
-                                        { name: "Ақтөбе құрылыс материалдары зауыты", coords: [50.283, 57.167] },
-                                        { name: "Хромтау құрылыс материалдары зауыты", coords: [50.250, 58.434] }
-                                    ],
-                                    westKazakhstanConstruction: [
-                                        { name: "Орал құрылыс материалдары зауыты", coords: [51.227, 51.386] },
-                                        { name: "Ақсай құрылыс материалдары зауыты", coords: [51.167, 52.997] }
-                                    ],
-                                    phosphorusFertilizers: [
-                                        { name: "Тараз фосфор тыңайтқыш зауыты", coords: [42.900, 71.366] },
-                                        { name: "Ақтөбе фосфор тыңайтқыш зауыты", coords: [50.283, 57.167] },
-                                        { name: "Жамбыл фосфор тыңайтқыш зауыты", coords: [42.900, 71.366] }
-                                    ],
-                                    nitrogenFertilizers: [
-                                        { name: "Ақтау азот тыңайтқыш зауыты", coords: [43.652, 51.196] },
-                                        { name: "Теміртау азот тыңайтқыш зауыты", coords: [50.054, 72.964] }
-                                    ],
-                                    sodaSalt: [
-                                        { name: "Павлодар сода зауыты", coords: [52.297, 76.957] },
-                                        { name: "Арал тұз зауыты", coords: [46.800, 61.667] },
-                                        { name: "Балқаш тұз зауыты", coords: [46.848, 74.995] },
-                                        { name: "Қалқаман тұз зауыты", coords: [52.350, 76.917] },
-                                        { name: "Тобылжан тұз зауыты", coords: [52.547, 62.493] },
-                                        { name: "Индер тұз зауыты", coords: [48.550, 53.467] }
-                                    ],
-                                    sulfuricAcid: [
-                                        { name: "Алексеев күкірт қышқылы зауыты", coords: [53.283, 69.383] },
-                                        { name: "Қарағанды күкірт қышқылы зауыты", coords: [49.803, 73.102] },
-                                        { name: "Шымкент күкірт қышқылы зауыты", coords: [42.300, 69.600] }
+                                    householdChemistry: [
+                                        { 
+                                            name: "«Компания ЭКОХИМ» ЖШС Ақтөбе облысы", 
+                                            coords: [50.283, 57.167],
+                                            info: {
+                                                year: "2005 жыл",
+                                                location: "Ақтөбе қаласы, Ақтөбе облысы",
+                                                products: "Тұрмыстық химия",
+                                                capacity: "Жылына 10 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        }
                                     ],
                                     polymers: [
-                                        { name: "Ақтау полимер зауыты", coords: [43.652, 51.196] },
-                                        { name: "Атырау полимер зауыты", coords: [47.123, 51.925] },
-                                        { name: "Алматы полимер зауыты", coords: [43.222, 76.851] },
-                                        { name: "Астана полимер зауыты", coords: [51.169, 71.449] }
+                                        { 
+                                            name: "Қарағанды резеңке-техникалық бұйымдар зауыты Қарағанды қаласы", 
+                                            coords: [49.803, 73.102],
+                                            info: {
+                                                year: "1970 жыл",
+                                                location: "Қарағанды қаласы, Қарағанды облысы",
+                                                products: "Резеңке-техникалық бұйымдар",
+                                                capacity: "Жылына 5 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        },
+                                        { 
+                                            name: "«НаИл» ЖШС Қарағанды қаласы", 
+                                            coords: [49.803, 73.102],
+                                            info: {
+                                                year: "2008 жыл",
+                                                location: "Қарағанды қаласы, Қарағанды облысы",
+                                                products: "Полимер өнімдері",
+                                                capacity: "Жылына 8 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        }
                                     ],
-                                    syntheticRubber: [
-                                        { name: "Теміртау синтетикалық коксагыз зауыты", coords: [50.054, 72.964] }
+                                    holdings: [
+                                        { 
+                                            name: "Samruk-Kazyna Ondeu Астана", 
+                                            coords: [51.169, 71.449],
+                                            info: {
+                                                year: "2008 жыл",
+                                                location: "Астана қаласы",
+                                                products: "Химиялық холдинг",
+                                                capacity: "Қазақстанның химиялық өнеркәсібінің 30%"
+                                            },
+                                            image: ""
+                                        },
+                                        { 
+                                            name: "«ЕвроХим-Каратау» ЖШС Алматы қаласы", 
+                                            coords: [43.222, 76.851],
+                                            info: {
+                                                year: "2010 жыл",
+                                                location: "Алматы қаласы",
+                                                products: "Химиялық холдинг",
+                                                capacity: "Қазақстанның химиялық өнеркәсібінің 20%"
+                                            },
+                                            image: ""
+                                        }
                                     ],
-                                    petrochemicals: [
-                                        { name: "Қарабатан мұнай химия зауыты", coords: [47.123, 51.925] },
-                                        { name: "Атырау мұнай химия зауыты", coords: [47.123, 51.925] },
-                                        { name: "Павлодар мұнай химия зауыты", coords: [52.297, 76.957] },
-                                        { name: "Шымкент мұнай химия зауыты", coords: [42.300, 69.600] }
-                                    ],
-                                    pharmaceuticals: [
-                                        { name: "Павлодар фармацевтика зауыты", coords: [52.297, 76.957] },
-                                        { name: "Шымкент фармацевтика зауыты", coords: [42.300, 69.600] },
-                                        { name: "Алматы фармацевтика зауыты", coords: [43.222, 76.851] },
-                                        { name: "Алматы облысы фармацевтика зауыты", coords: [43.222, 76.851] },
-                                        { name: "Қарағанды фармацевтика зауыты", coords: [49.803, 73.102] },
-                                        { name: "Жамбыл фармацевтика зауыты", coords: [42.900, 71.366] }
+                                    other: [
+                                        { 
+                                            name: "«Азот зауыты» ЖШС Маңғыстау облысы, Ақтау қаласы", 
+                                            coords: [43.652, 51.196],
+                                            info: {
+                                                year: "1998 жыл",
+                                                location: "Ақтау қаласы, Маңғыстау облысы",
+                                                products: "Азот өнімдері",
+                                                capacity: "Жылына 100 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        },
+                                        { 
+                                            name: "«Актобехимкомбинат Кели» ЖШС Ақтөбе қаласы", 
+                                            coords: [50.283, 57.167],
+                                            info: {
+                                                year: "2003 жыл",
+                                                location: "Ақтөбе қаласы, Ақтөбе облысы",
+                                                products: "Химиялық өнімдер",
+                                                capacity: "Жылына 50 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        },
+                                        { 
+                                            name: "«Алматынефтехим А» ЖШС Алматы қаласы", 
+                                            coords: [43.222, 76.851],
+                                            info: {
+                                                year: "2006 жыл",
+                                                location: "Алматы қаласы",
+                                                products: "Мұнай химиясы",
+                                                capacity: "Жылына 30 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        },
+                                        { 
+                                            name: "«Бугель-Кызылорда» ЖШС Қызылорда қаласы", 
+                                            coords: [44.848, 65.482],
+                                            info: {
+                                                year: "2009 жыл",
+                                                location: "Қызылорда қаласы, Қызылорда облысы",
+                                                products: "Химиялық өнімдер",
+                                                capacity: "Жылына 20 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        },
+                                        { 
+                                            name: "«Миком» ЖШС БАТЫС ҚАЗАҚСТАН ОБЛЫСЫ, ОРАЛ қаласы", 
+                                            coords: [51.227, 51.386],
+                                            info: {
+                                                year: "2007 жыл",
+                                                location: "Орал қаласы, Батыс Қазақстан облысы",
+                                                products: "Химиялық өнімдер",
+                                                capacity: "Жылына 15 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        },
+                                        { 
+                                            name: "«Экоминералс» ЖШС Қарағанды қаласы", 
+                                            coords: [49.803, 73.102],
+                                            info: {
+                                                year: "2011 жыл",
+                                                location: "Қарағанды қаласы, Қарағанды облысы",
+                                                products: "Минералды өнімдер",
+                                                capacity: "Жылына 25 мың тонна өнім"
+                                            },
+                                            image: ""
+                                        }
                                     ]
                                 };
 
@@ -1314,12 +1574,46 @@
                                 // Создание маркеров по группам
                                 Object.keys(locations).forEach(group => {
                                     markers[group] = [];
-                                    locations[group].forEach(location => {
+                                    locations[group].forEach((location, idx) => {
                                         const marker = L.marker(location.coords)
-                                            .bindPopup(`<strong>${location.name}</strong>`);
+                                            .bindPopup(`
+                                                <div style="max-width: 300px;">
+                                                    <h4 style="margin-bottom: 10px;">${location.name}</h4>
+                                                    <p><strong>Құрылған жылы:</strong> ${location.info.year}</p>
+                                                    <p><strong>Орналасқан жері:</strong> ${location.info.location}</p>
+                                                    <p><strong>Негізгі өнімдері:</strong> ${location.info.products}</p>
+                                                    <p><strong>Жобалық қуаты:</strong> ${location.info.capacity}</p>
+                                                    ${location.info.additional ? `<p><strong>Қосымша:</strong> ${location.info.additional}</p>` : ''}
+                                                    ${location.image ? `<img src="${location.image}" alt="${location.name}" style="max-width: 100%; height: auto; border-radius: 5px; margin-top: 10px;">` : ''}
+                                                </div>
+                                            `);
+                                        // Открываем popup только по клику на маркер
+                                        marker.on('click', function(e) {
+                                            marker.openPopup();
+                                            // Можно также показать info-блок, если нужно
+                                        });
                                         markers[group].push(marker);
                                     });
                                 });
+
+                                // Добавляем контейнер для информации о предприятии
+                                const infoContainer = document.createElement('div');
+                                infoContainer.id = 'factory-info';
+                                infoContainer.style.cssText = `
+                                    position: fixed;
+                                    bottom: 20px;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    background: white;
+                                    padding: 20px;
+                                    border-radius: 10px;
+                                    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                                    max-width: 800px;
+                                    width: 90%;
+                                    display: none;
+                                    z-index: 1000;
+                                `;
+                                document.body.appendChild(infoContainer);
 
                                 // Раскрытие категорий и отображение маркеров группы
                                 document.querySelectorAll('.category').forEach(category => {
@@ -1342,52 +1636,23 @@
                                             markers[g].forEach(m => map2.removeLayer(m));
                                         });
 
-                                        // Если список показан, показываем маркеры
+                                        // Показываем маркеры только для открытой категории
                                         if (list.style.display === 'block') {
                                             markers[group].forEach(m => m.addTo(map2));
                                         }
 
                                         // Возвращаем масштаб карты
                                         map2.setView([48.0196, 66.9237], 5, { animate: true, duration: 1.5 });
-                                    });
-                                });
 
-                                // Обработчик для подкатегорий
-                                document.querySelectorAll('.subcategory').forEach(subcategory => {
-                                    subcategory.addEventListener('click', event => {
-                                        event.stopPropagation();
-                                        const group = event.target.dataset.group;
-                                        const subcategoryList = document.querySelector(`.subcategory-list[data-group="${group}"]`);
-                                        
-                                        // Скрываем все списки подкатегорий
-                                        document.querySelectorAll('.subcategory-list').forEach(list => {
-                                            if (list !== subcategoryList) {
-                                                list.style.display = 'none';
-                                            }
-                                        });
-                                        
-                                        // Показываем/скрываем выбранный список
-                                        subcategoryList.style.display = subcategoryList.style.display === 'block' ? 'none' : 'block';
-
-                                        // Удаляем все маркеры
-                                        Object.keys(markers).forEach(g => {
-                                            markers[g].forEach(m => map2.removeLayer(m));
-                                        });
-
-                                        // Если список показан, показываем маркеры
-                                        if (subcategoryList.style.display === 'block') {
-                                            markers[group].forEach(m => m.addTo(map2));
-                                        }
-
-                                        // Возвращаем масштаб карты
-                                        map2.setView([48.0196, 66.9237], 5, { animate: true, duration: 1.5 });
+                                        // Скрываем информацию о предприятии
+                                        document.getElementById('factory-info').style.display = 'none';
                                     });
                                 });
 
                                 // Обработчик для заводов
-                                document.querySelectorAll('.subcategory-list li').forEach(item => {
+                                let currentMarker = null;
+                                document.querySelectorAll('.factory-list li').forEach(item => {
                                     item.addEventListener('click', event => {
-                                        event.stopPropagation();
                                         const group = event.target.dataset.group;
                                         const index = event.target.dataset.index;
 
@@ -1395,14 +1660,88 @@
                                         Object.keys(markers).forEach(g => {
                                             markers[g].forEach(m => map2.removeLayer(m));
                                         });
+                                        // Скрываем info-блок
+                                        document.getElementById('factory-info').style.display = 'none';
 
                                         if (group && index !== undefined) {
-                                            // Показать один маркер с плавным зумом
+                                            const location = locations[group][index];
                                             const marker = markers[group][index];
-                                            marker.addTo(map2).openPopup();
+                                            marker.addTo(map2); // Только добавляем маркер, НЕ вызываем openPopup()
                                             map2.setView(marker.getLatLng(), 10, { animate: true, duration: 1.5 });
+                                            currentMarker = marker;
+
+                                            // Показываем информацию о предприятии
+                                            const infoContainer = document.getElementById('factory-info');
+                                            infoContainer.innerHTML = `
+                                                <div style="display: flex; gap: 20px;">
+                                                    <div style="flex: 1;">
+                                                        <h3 style="margin-bottom: 15px;">${location.name}</h3>
+                                                        <p><strong>Құрылған жылы:</strong> ${location.info.year}</p>
+                                                        <p><strong>Орналасқан жері:</strong> ${location.info.location}</p>
+                                                        <p><strong>Негізгі өнімдері:</strong> ${location.info.products}</p>
+                                                        <p><strong>Жобалық қуаты:</strong> ${location.info.capacity}</p>
+                                                        ${location.info.additional ? `<p><strong>Қосымша:</strong> ${location.info.additional}</p>` : ''}
+                                                    </div>
+                                                    <div style="flex: 1;">
+                                                        <img src="${location.image}" alt="${location.name}" style="max-width: 100%; height: auto; border-radius: 5px;">
+                                                    </div>
+                                                </div>
+                                                <button onclick="document.getElementById('factory-info').style.display='none'" 
+                                                        style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer;">×</button>
+                                            `;
+                                            infoContainer.style.display = 'block';
                                         }
                                     });
+                                });
+
+                                // Добавить обработчик клика по карте для открытия информации о предприятии по координатам
+                                map2.on('click', function(e) {
+                                    // Найти ближайший город (предприятие) по координатам
+                                    let found = null;
+                                    let foundGroup = null;
+                                    let foundIndex = null;
+                                    Object.keys(locations).forEach(group => {
+                                        locations[group].forEach((location, idx) => {
+                                            // Радиус совпадения (в градусах)
+                                            const latDiff = Math.abs(location.coords[0] - e.latlng.lat);
+                                            const lngDiff = Math.abs(location.coords[1] - e.latlng.lng);
+                                            if (latDiff < 0.25 && lngDiff < 0.25) {
+                                                found = location;
+                                                foundGroup = group;
+                                                foundIndex = idx;
+                                            }
+                                        });
+                                    });
+                                    // Удалить все маркеры и скрыть info-блок
+                                    Object.keys(markers).forEach(g => {
+                                        markers[g].forEach(m => map2.removeLayer(m));
+                                    });
+                                    document.getElementById('factory-info').style.display = 'none';
+                                    if (found && foundGroup !== null && foundIndex !== null) {
+                                        // Показать маркер и info-блок
+                                        const marker = markers[foundGroup][foundIndex];
+                                        marker.addTo(map2).openPopup();
+                                        map2.setView(marker.getLatLng(), 10, { animate: true, duration: 1.5 });
+                                        const infoContainer = document.getElementById('factory-info');
+                                        infoContainer.innerHTML = `
+                                            <div style="display: flex; gap: 20px;">
+                                                <div style="flex: 1;">
+                                                    <h3 style="margin-bottom: 15px;">${found.name}</h3>
+                                                    <p><strong>Құрылған жылы:</strong> ${found.info.year}</p>
+                                                    <p><strong>Орналасқан жері:</strong> ${found.info.location}</p>
+                                                    <p><strong>Негізгі өнімдері:</strong> ${found.info.products}</p>
+                                                    <p><strong>Жобалық қуаты:</strong> ${found.info.capacity}</p>
+                                                    ${found.info.additional ? `<p><strong>Қосымша:</strong> ${found.info.additional}</p>` : ''}
+                                                </div>
+                                                <div style="flex: 1;">
+                                                    <img src="${found.image}" alt="${found.name}" style="max-width: 100%; height: auto; border-radius: 5px;">
+                                                </div>
+                                            </div>
+                                            <button onclick="document.getElementById('factory-info').style.display='none'" 
+                                                    style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer;">×</button>
+                                        `;
+                                        infoContainer.style.display = 'block';
+                                    }
                                 });
                             </script>
                         </div>
